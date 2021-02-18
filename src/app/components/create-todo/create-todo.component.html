@@ -1,0 +1,27 @@
+  
+  <div id="formulaire">
+	<h3 id="formTitle">{{formTitle}} </h3>
+
+  <form (ngSubmit)="save()" ngNativeValidate>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="t.title" name="title">
+    </div>
+	<div class="form-group">
+		<label for="name">Description</label>
+    <textarea class="form-control" id="description" name="description" [(ngModel)]="t.description" rows="3"></textarea>
+	  </div>
+    <div class="form-group">
+      <label for="name">Start date</label>
+      <input type="date" class="form-control" id="startDate" required [(ngModel)]="t.startDate" name="startDate">
+    </div>
+    <div class="form-group">
+      <label for="name">End date</label>
+      <input type="date" class="form-control" id="endDate" required [(ngModel)]="t.endDate" name="endDate">
+      <span *ngIf="dateError">Invalid date range</span>
+    </div>
+	<button  style="width:35%" type="submit" class="btn btn-success">Submit</button>
+	<button style="float: right;width:35%" (click)="list()" class="btn btn-primary pull-right">Back</button><br>
+
+  </form>
+</div>

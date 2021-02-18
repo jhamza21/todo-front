@@ -1,0 +1,14 @@
+#formulaire{
+    margin: auto;
+    width: 600px; 
+    padding: 8px;
+    border: solid 1px black;
+    background-color: rgb(250, 245, 245);
+    border-radius: 5px;
+}   
+#formTitle{
+    text-align: center;
+}
+span{
+    color: red;
+}

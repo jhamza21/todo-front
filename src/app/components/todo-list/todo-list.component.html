@@ -1,0 +1,18 @@
+  <div class="row row-cols-5 card-group">
+    <div *ngFor="let t of todos | async" class="col">
+    <div class="card" [style]="{'background-color': (t.status=='CLOSED') ? '#73c7af' :(t.status=='DELAYED')?'#F7A391': '#ffffff'}">
+      <h5 class="card-header">{{t.title}}</h5>
+      <div class="card-body">
+        <div class="card-left">
+        <p class="card-title">{{t.startDate}} - {{t.endDate}}</p>
+        <p class="card-text">{{t.description}}</p>
+      </div>
+        <div class="card-buttons">
+        <i *ngIf="t.status!='CLOSED'" class="bi bi-check-circle" (click)="closeTodo(t)" ></i>
+        <i *ngIf="t.status!='CLOSED'" class="bi bi-pencil" (click)="updateTodo(t.id)"  ></i>
+        <i class="bi bi-trash" (click)="deleteTodo(t.id)" ></i>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
